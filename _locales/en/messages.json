@@ -1,0 +1,554 @@
+{
+  "locale": {
+    "message": "en",
+    "description": "i18n currently does not provide ability to retrieve currently active locale."
+  },
+  "ExtensionsName": {
+    "message": "ExImageInfo"
+  },
+  "ExtensionDescription": {
+    "message": "Image properties and EXIF in a classic representation."
+  },
+  "ContextMenuItem": {
+    "message": "Image Properties"
+  },
+  "PageTitle": {
+    "message": "Image Properties"
+  },
+  "ImagePropertiesHeaderLabel": {
+    "message": "Image Properties"
+  },
+  "EXIFHeaderLabel": {
+    "message": "EXIF"
+  },
+  "EXIFSourceHeaderLabel": {
+    "message": "EXIF Source"
+  },
+  "LocationLabel": {
+    "message": "Location:"
+  },
+  "FileNameLabel": {
+    "message": "File name:"
+  },
+  "FileTypeLabel": {
+    "message": "Type:"
+  },
+  "ResolutionLabel": {
+    "message": "Resolution:"
+  },
+  "FileSizeLabel": {
+    "message": "File size:"
+  },
+  "ResolutionNatural": {
+    "message": "$1 × $2 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$3",
+        "description": "Pluralized and localized unit name for pixels."
+      }
+    }
+  },
+  "ResolutionScaled": {
+    "message": "(scaled to $1 × $2 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$3",
+        "description": "Pluralized and localized unit name for pixels."
+      }
+    }
+  },
+  "SIPixels": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized SI unit name for pixels. E.g. Mp, Gp etc."
+      }
+    }
+  },
+  "SIPixelsAndRatio": {
+    "message": "($SIPIXELS$ $ASPECTRATIO$)",
+    "placeholders": {
+      "SIPIXELS": {
+        "content": "$1",
+        "description": "Pluralized and localized SI pixels."
+      },
+      "ASPECTRATIO": {
+        "content": "$2",
+        "description": "Image aspect ratio."
+      }
+    }
+  },
+  "SIPixelsOnly": {
+    "message": "($SIPIXELS$)",
+    "placeholders": {
+      "SIPIXELS": {
+        "content": "$1",
+        "description": "Pluralized and localized SI pixels."
+      }
+    }
+  },
+  "AspectRatioOnly": {
+    "message": "($ASPECTRATIO$)",
+    "placeholders": {
+      "ASPECTRATIO": {
+        "content": "$1",
+        "description": "Image aspect ratio."
+      }
+    }
+  },
+  "FileSize": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit name for bytes."
+      }
+    }
+  },
+  "SIBytes": {
+    "message": "($1 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized SI (IEC) unit name for bytes. E.g. kB, MB, GB etc."
+      }
+    }
+  },
+  "FileSizeContentCaution": {
+    "message": "Unable to determine file size. This is a downloadable size. It could be compressed."
+  },
+  "pixelType": {
+    "message": "sum" ,
+    "description": "DO NOT TRANSLATE: sum - plural form by sum of all pixels, width - plural form by width, height - plural form by height (default)"
+  },
+  "Resolution_pixels_one": {
+    "message": "pixel"
+  },
+  "Resolution_pixels_other": {
+    "message": "pixels"
+  },
+  "FileSize_bytes_one": {
+    "message": "byte"
+  },
+  "FileSize_bytes_other": {
+    "message": "bytes"
+  },
+  "px": {
+    "message": "px"
+  },
+  "kp": {
+    "message": "kp"
+  },
+  "Mp": {
+    "message": "Mp"
+  },
+  "Gp": {
+    "message": "Gp"
+  },
+  "Tp": {
+    "message": "Tp"
+  },
+  "B": {
+    "message": "B",
+    "description": "Byte"
+  },
+  "kB": {
+    "message": "kB"
+  },
+  "MB": {
+    "message": "MB"
+  },
+  "GB": {
+    "message": "GB"
+  },
+  "TB": {
+    "message": "TB"
+  },
+  "PB": {
+    "message": "PB"
+  },
+  "MakeLabel": {
+    "message": "Make:"
+  },
+  "ModelLabel": {
+    "message": "Model:"
+  },
+  "LensLabel": {
+    "message": "Lens:"
+  },
+  "ApertureLabel": {
+    "message": "Aperture:"
+  },
+  "ExposureTimeLabel": {
+    "message": "Exposure Time:"
+  },
+  "ISOLabel": {
+    "message": "ISO:"
+  },
+  "FocalLengthLabel": {
+    "message": "Focal Length:"
+  },
+  "WhiteBalanceLabel": {
+    "message": "White Balance:"
+  },
+  "ExposureProgramLabel": {
+    "message": "Exposure Program:"
+  },
+  "MeteringModeLabel": {
+    "message": "Metering Mode:"
+  },
+  "FlashLabel": {
+    "message": "Flash:"
+  },
+  "ExposureCompensationLabel": {
+    "message": "Exposure Compensation:"
+  },
+  "SubjectDistanceLabel": {
+    "message": "Subject Distance:"
+  },
+  "DateLabel": {
+    "message": "Date:"
+  },
+  "GPSLabel": {
+    "message": "Location:"
+  },
+  "EXIFSourceLabel": {
+    "message": "Full EXIF data"
+  },
+  "NoEXIF": {
+    "message": "EXIF data not available."
+  },
+  "ErrorEXIFData": {
+    "message": "Error while processing EXIF data: $ERROR$.",
+    "placeholders": {
+      "ERROR": {
+        "content": "$1",
+        "description": "Exception message."
+      }
+    }
+  },
+  "ErrorImgData": {
+    "message": "Error while processing image data: $ERROR$.",
+    "placeholders": {
+      "ERROR": {
+        "content": "$1",
+        "description": "Exception message."
+      }
+    }
+  },
+  "ExposureTime": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit name for seconds."
+      }
+    }
+  },
+  "ExposureTimeFraction": {
+    "message": "(1/$1)"
+  },
+  "ExposureTime_seconds_one": {
+    "message": "sec"
+  },
+  "ExposureTime_seconds_other": {
+    "message": "sec"
+  },
+  "Aperture": {
+    "message": "f/$1"
+  },
+  "FocalLength": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for focal length in millimeters."
+      }
+    }
+  },
+  "FocalLength35mmEq": {
+    "message": "(35 mm equivalent: $1 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for focal length in millimeters."
+      }
+    }
+  },
+  "FocalLength_millimeters_one": {
+    "message": "mm"
+  },
+  "FocalLength_millimeters_other": {
+    "message": "mm"
+  },
+  "SubjectDistance": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for subject distance in meters."
+      }
+    }
+  },
+  "SubjectDistance_meters_one": {
+    "message": "m"
+  },
+  "SubjectDistance_meters_other": {
+    "message": "m"
+  },
+  "Unknown": {
+    "message": "Unknown"
+  },
+  "Auto white balance": {
+    "message": "Auto"
+  },
+  "Manual white balance": {
+    "message": "Manual"
+  },
+  "Not defined": {
+    "message": "Not defined"
+  },
+  "Manual": {
+    "message": "Manual"
+  },
+  "Normal program": {
+    "message": "Program mode"
+  },
+  "Aperture priority": {
+    "message": "Aperture priority"
+  },
+  "Shutter priority": {
+    "message": "Shutter priority"
+  },
+  "Creative program": {
+    "message": "Creative program"
+  },
+  "Action program": {
+    "message": "Action program"
+  },
+  "Portrait mode": {
+    "message": "Portrait mode"
+  },
+  "Landscape mode": {
+    "message": "Landscape mode"
+  },
+  "Bulb mode": {
+    "message": "Bulb mode"
+  },
+  "Average": {
+    "message": "Average"
+  },
+  "CenterWeightedAverage": {
+    "message": "Center-weighted"
+  },
+  "Spot": {
+    "message": "Spot"
+  },
+  "MultiSpot": {
+    "message": "Multiple spot"
+  },
+  "Pattern": {
+    "message": "Matrix"
+  },
+  "Partial": {
+    "message": "Partial"
+  },
+  "Other": {
+    "message": "Unknown type"
+  },
+  "Flash did not fire": {
+    "message": "Flash did not fire"
+  },
+  "Flash fired": {
+    "message": "Flash fired"
+  },
+  "Strobe return light not detected": {
+    "message": "Strobe return light not detected"
+  },
+  "Strobe return light detected": {
+    "message": "Strobe return light detected"
+  },
+  "Flash fired, compulsory flash mode": {
+    "message": "Flash fired, compulsory flash mode"
+  },
+  "Flash fired, compulsory flash mode, return light not detected": {
+    "message": "Flash fired, compulsory flash mode, return light not detected"
+  },
+  "Flash fired, compulsory flash mode, return light detected": {
+    "message": "Flash fired, compulsory flash mode, return light detected"
+  },
+  "Flash did not fire, compulsory flash mode": {
+    "message": "Flash did not fire, compulsory flash mode"
+  },
+  "Flash did not fire, auto mode": {
+    "message": "Flash did not fire, auto mode"
+  },
+  "Flash fired, auto mode": {
+    "message": "Flash fired, auto mode"
+  },
+  "Flash fired, auto mode, return light not detected": {
+    "message": "Flash fired, auto mode, return light not detected"
+  },
+  "Flash fired, auto mode, return light detected": {
+    "message": "Flash fired, auto mode, return light detected"
+  },
+  "No flash function": {
+    "message": "No flash function"
+  },
+  "Flash fired, red-eye reduction mode": {
+    "message": "Flash fired, red-eye reduction mode"
+  },
+  "Flash fired, red-eye reduction mode, return light not detected": {
+    "message": "Flash fired, red-eye reduction mode, return light not detected"
+  },
+  "Flash fired, red-eye reduction mode, return light detected": {
+    "message": "Flash fired, red-eye reduction mode, return light detected"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode": {
+    "message": "Flash fired, compulsory flash mode, red-eye reduction mode"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected": {
+    "message": "Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode, return light detected": {
+    "message": "Flash fired, compulsory flash mode, red-eye reduction mode, return light detected"
+  },
+  "Flash fired, auto mode, red-eye reduction mode": {
+    "message": "Flash fired, auto mode, red-eye reduction mode"
+  },
+  "Flash fired, auto mode, return light not detected, red-eye reduction mode": {
+    "message": "Flash fired, auto mode, return light not detected, red-eye reduction mode"
+  },
+  "Flash fired, auto mode, return light detected, red-eye reduction mode": {
+    "message":  "Flash fired, auto mode, return light detected, red-eye reduction mode"
+  },
+  "EV_1/2": {
+    "message": "1/2"
+  },
+  "EV_1/3": {
+    "message": "1/3"
+  },
+  "EV_2/3": {
+    "message": "2/3"
+  },
+  "EV_1/4": {
+    "message": "1/4"
+  },
+  "EV_3/4": {
+    "message": "3/4"
+  },
+  "EV_1/5": {
+    "message": "1/5"
+  },
+  "EV_2/5": {
+    "message": "2/5"
+  },
+  "EV_3/5": {
+    "message": "3/5"
+  },
+  "EV_4/5": {
+    "message": "4/5"
+  },
+  "ExposureBias": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for exposure compensation steps."
+      }
+    }
+  },
+  "EV_one": {
+    "message": "EV"
+  },
+  "EV_other": {
+    "message": "EV"
+  },
+  "LocationRefN": {
+    "message": "N"
+  },
+  "LocationRefS": {
+    "message": "S"
+  },
+  "LocationRefW": {
+    "message": "W"
+  },
+  "LocationRefE": {
+    "message": "E"
+  },
+  "LocationStringDegrees": {
+    "message": "$1°$2'$3\""
+  },
+  "LocationStringDecimalMinutes": {
+    "message": "$1°$2'"
+  },
+  "LocationStringDecimal": {
+    "message": "$1°"
+  },
+  "LocationStringLocalized": {
+    "message": "$LATITUDE$ $LANREF$, $LONGITUDE$ $LONREF$",
+    "placeholders": {
+      "LATITUDE": {
+        "content": "$1"
+      },
+      "LANREF": {
+        "content": "$2"
+      },
+      "LONGITUDE": {
+        "content": "$3"
+      },
+      "LONREF": {
+        "content": "$4"
+      }
+    }
+  },
+  "GoogleMapsName": {
+    "message": "Google Maps"
+  },
+  "GoogleMapsURL": {
+    "message": "https://www.google.com/maps/place/$LOCATION$/",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on Google Maps."
+      }
+    }
+  },
+  "YandexMapsName": {
+    "message": "Yandex.Maps"
+  },
+  "YandexMapsURL": {
+    "message": "https://yandex.com/maps/?mode=search&text=$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on Yandex Maps."
+      }
+    }
+  },
+  "OSMName": {
+    "message": "OSM"
+  },
+  "OSMURL": {
+    "message": "https://www.openstreetmap.org/?locale=en&$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location for marker on OSM (decimal lat/lon)."
+      }
+    }
+  },
+  "GeoHackName": {
+    "message": "GeoHack"
+  },
+  "GeoHackURL": {
+    "message": "https://tools.wmflabs.org/geohack/geohack.php?language=en&params=$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on GeoHack."
+      }
+    }
+  }
+}

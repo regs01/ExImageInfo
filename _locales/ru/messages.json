@@ -1,0 +1,582 @@
+{
+  "locale": {
+    "message": "ru",
+    "description": "i18n currently does not provide ability to retrieve currently active locale."
+  },
+  "ExtensionsName": {
+    "message": "ExImageInfo"
+  },
+  "ExtensionDescription": {
+    "message": "Свойства изображения и данные EXIF в классическом виде."
+  },
+  "ContextMenuItem": {
+    "message": "Свойства изображения"
+  },
+  "PageTitle": {
+    "message": "Свойства изображения"
+  },
+  "ImagePropertiesHeaderLabel": {
+    "message": "Свойства изображения"
+  },
+  "EXIFHeaderLabel": {
+    "message": "EXIF"
+  },
+  "EXIFSourceHeaderLabel": {
+    "message": "Данные EXIF"
+  },
+  "LocationLabel": {
+    "message": "Расположение:"
+  },
+  "FileNameLabel": {
+    "message": "Имя файла:"
+  },
+  "FileTypeLabel": {
+    "message": "Тип:"
+  },
+  "ResolutionLabel": {
+    "message": "Разрешение:"
+  },
+  "FileSizeLabel": {
+    "message": "Размер файла:"
+  },
+  "ResolutionNatural": {
+    "message": "$1 × $2 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$3",
+        "description": "Pluralized and localized unit name for pixels."
+      }
+    }
+  },
+  "ResolutionScaled": {
+    "message": "(масштабировано до $1 × $2 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$3",
+        "description": "Pluralized and localized unit name for pixels."
+      }
+    }
+  },
+  "SIPixels": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized SI unit name for pixels. E.g. Mp, Gp etc."
+      }
+    }
+  },
+  "SIPixelsAndRatio": {
+    "message": "($SIPIXELS$ $ASPECTRATIO$)",
+    "placeholders": {
+      "SIPIXELS": {
+        "content": "$1",
+        "description": "Pluralized and localized SI pixels."
+      },
+      "ASPECTRATIO": {
+        "content": "$2",
+        "description": "Image aspect ratio."
+      }
+    }
+  },
+  "SIPixelsOnly": {
+    "message": "($SIPIXELS$)",
+    "placeholders": {
+      "SIPIXELS": {
+        "content": "$1",
+        "description": "Pluralized and localized SI pixels."
+      }
+    }
+  },
+  "AspectRatioOnly": {
+    "message": "($ASPECTRATIO$)",
+    "placeholders": {
+      "ASPECTRATIO": {
+        "content": "$1",
+        "description": "Image aspect ratio."
+      }
+    }
+  },
+  "FileSize": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit name for bytes."
+      }
+    }
+  },
+  "SIBytes": {
+    "message": "($1 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized SI (IEC) unit name for bytes. E.g. kB, MB, GB etc."
+      }
+    }
+  },
+  "FileSizeContentCaution": {
+    "message": "Не удалось определить размер файла. Показан скаченный объём. Он мог быть сжат."
+  },
+  "pixelType": {
+    "message": "height" ,
+    "description": "DO NOT TRANSLATE: sum - plural form by sum of all pixels, width - plural form by width, height - plural form by height (default)"
+  },
+  "Resolution_pixels_one": {
+    "message": "пиксель"
+  },
+  "Resolution_pixels_few": {
+    "message": "пикселя"
+  },
+  "Resolution_pixels_many": {
+    "message": "пикселей"
+  },
+  "Resolution_pixels_other": {
+    "message": "пикселя"
+  },
+  "FileSize_bytes_one": {
+    "message": "байт"
+  },
+  "FileSize_bytes_few": {
+    "message": "байта"
+  },
+  "FileSize_bytes_many": {
+    "message": "байт"
+  },
+  "FileSize_bytes_other": {
+    "message": "байта"
+  },
+  "px": {
+    "message": "пкс"
+  },
+  "kp": {
+    "message": "кп"
+  },
+  "Mp": {
+    "message": "Мп"
+  },
+  "Gp": {
+    "message": "Гп"
+  },
+  "Tp": {
+    "message": "Тп"
+  },
+  "B": {
+    "message": "Б",
+    "description": "Byte"
+  },
+  "kB": {
+    "message": "кБ"
+  },
+  "MB": {
+    "message": "МБ"
+  },
+  "GB": {
+    "message": "ГБ"
+  },
+  "TB": {
+    "message": "ТБ"
+  },
+  "PB": {
+    "message": "ПБ"
+  },
+  "MakeLabel": {
+    "message": "Производитель:"
+  },
+  "ModelLabel": {
+    "message": "Модель:"
+  },
+  "LensLabel": {
+    "message": "Объектив:"
+  },
+  "ApertureLabel": {
+    "message": "Апертура:"
+  },
+  "ExposureTimeLabel": {
+    "message": "Выдержка:"
+  },
+  "ISOLabel": {
+    "message": "ISO:"
+  },
+  "FocalLengthLabel": {
+    "message": "Фокусное расстояние:"
+  },
+  "WhiteBalanceLabel": {
+    "message": "Баланс белого:"
+  },
+  "ExposureProgramLabel": {
+    "message": "Программа экспозиции:"
+  },
+  "MeteringModeLabel": {
+    "message": "Замер:"
+  },
+  "FlashLabel": {
+    "message": "Вспышка:"
+  },
+  "ExposureCompensationLabel": {
+    "message": "Поправка экспозиции:"
+  },
+  "SubjectDistanceLabel": {
+    "message": "Дистанция до объекта:"
+  },
+  "DateLabel": {
+    "message": "Дата:"
+  },
+  "GPSLabel": {
+    "message": "Местоположение:"
+  },
+  "EXIFSourceLabel": {
+    "message": "Полный EXIF"
+  },
+  "NoEXIF": {
+    "message": "Данные EXIF отсутствуют."
+  },
+  "ErrorEXIFData": {
+    "message": "Ошибка при обработке данных EXIF: $ERROR$.",
+    "placeholders": {
+      "ERROR": {
+        "content": "$1",
+        "description": "Exception message."
+      }
+    }
+  },
+  "ErrorImgData": {
+    "message": "Ошибка при обработке данных изображения: $ERROR$.",
+    "placeholders": {
+      "ERROR": {
+        "content": "$1",
+        "description": "Exception message."
+      }
+    }
+  },
+  "ExposureTime": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit name for seconds."
+      }
+    }
+  },
+  "ExposureTimeFraction": {
+    "message": "(1/$1)"
+  },
+  "ExposureTime_seconds_one": {
+    "message": "сек."
+  },
+  "ExposureTime_seconds_few": {
+    "message": "сек."
+  },
+  "ExposureTime_seconds_many": {
+    "message": "сек."
+  },
+  "ExposureTime_seconds_other": {
+    "message": "сек."
+  },
+  "Aperture": {
+    "message": "f/$1"
+  },
+  "FocalLength": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for focal length in millimeters."
+      }
+    }
+  },
+  "FocalLength35mmEq": {
+    "message": "(в 35-мм эквиваленте: $1 $UNIT$)",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for focal length in millimeters."
+      }
+    }
+  },
+  "FocalLength_millimeters_one": {
+    "message": "мм"
+  },
+  "FocalLength_millimeters_few": {
+    "message": "мм"
+  },
+  "FocalLength_millimeters_many": {
+    "message": "мм"
+  },
+  "FocalLength_millimeters_other": {
+    "message": "мм"
+  },
+  "SubjectDistance": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for subject distance in meters."
+      }
+    }
+  },
+  "SubjectDistance_meters_one": {
+    "message": "м"
+  },
+  "SubjectDistance_meters_few": {
+    "message": "м"
+  },
+  "SubjectDistance_meters_many": {
+    "message": "м"
+  },
+  "SubjectDistance_meters_other": {
+    "message": "м"
+  },
+  "Unknown": {
+    "message": "Неизвестно"
+  },
+  "Auto white balance": {
+    "message": "Авто"
+  },
+  "Manual white balance": {
+    "message": "Ручной"
+  },
+  "Not defined": {
+    "message": "Не задано"
+  },
+  "Manual": {
+    "message": "Ручная"
+  },
+  "Normal program": {
+    "message": "Программная"
+  },
+  "Aperture priority": {
+    "message": "Приоритет диафрагмы"
+  },
+  "Shutter priority": {
+    "message": "Приоритет выдержки"
+  },
+  "Creative program": {
+    "message": "Сюжет"
+  },
+  "Action program": {
+    "message": "Спорт"
+  },
+  "Portrait mode": {
+    "message": "Портрет"
+  },
+  "Landscape mode": {
+    "message": "Пейзаж"
+  },
+  "Bulb mode": {
+    "message": "Ручная выдержка"
+  },
+  "Average": {
+    "message": "Усреднённый"
+  },
+  "CenterWeightedAverage": {
+    "message": "Центровзвешенный"
+  },
+  "Spot": {
+    "message": "Точечный"
+  },
+  "MultiSpot": {
+    "message": "Многоточечный"
+  },
+  "Pattern": {
+    "message": "Матричный"
+  },
+  "Partial": {
+    "message": "Частичный"
+  },
+  "Other": {
+    "message": "Неизвестный тип"
+  },
+  "Flash did not fire": {
+    "message": "Не сработала"
+  },
+  "Flash fired": {
+    "message": "Сработала"
+  },
+  "Strobe return light not detected": {
+    "message": "Свет не обнаружен"
+  },
+  "Strobe return light detected": {
+    "message": "Свет обнаружен"
+  },
+  "Flash fired, compulsory flash mode": {
+    "message": "Сработала, принудительно"
+  },
+  "Flash fired, compulsory flash mode, return light not detected": {
+    "message": "Сработала, принудительно, свет не обнаружен"
+  },
+  "Flash fired, compulsory flash mode, return light detected": {
+    "message": "Сработала, принудительно, свет обнаружен"
+  },
+  "Flash did not fire, compulsory flash mode": {
+    "message": "Не сработала, принудительно"
+  },
+  "Flash did not fire, auto mode": {
+    "message": "Не сработала, авто"
+  },
+  "Flash fired, auto mode": {
+    "message": "Сработала, авто"
+  },
+  "Flash fired, auto mode, return light not detected": {
+    "message": "Сработала, авто, свет не обнаружен"
+  },
+  "Flash fired, auto mode, return light detected": {
+    "message": "Сработала, авто, свет обнаружен"
+  },
+  "No flash function": {
+    "message": "Нет вспышки"
+  },
+  "Flash fired, red-eye reduction mode": {
+    "message": "Сработала, подавление красных глаз"
+  },
+  "Flash fired, red-eye reduction mode, return light not detected": {
+    "message": "Сработала, подавление красных глаз, свет не обнаружен"
+  },
+  "Flash fired, red-eye reduction mode, return light detected": {
+    "message": "Сработала, подавление красных глаз, свет обнаружен"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode": {
+    "message": "Сработала, принудительно, подавление красных глаз"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected": {
+    "message": "Сработала, принудительно, подавление красных глаз, свет не обнаружен"
+  },
+  "Flash fired, compulsory flash mode, red-eye reduction mode, return light detected": {
+    "message": "Сработала, принудительно, подавление красных глаз, свет обнаружен"
+  },
+  "Flash fired, auto mode, red-eye reduction mode": {
+    "message": "Сработала, авто, подавление красных глаз"
+  },
+  "Flash fired, auto mode, return light not detected, red-eye reduction mode": {
+    "message": "Сработала, авто, свет не обнаружен, подавление красных глаз"
+  },
+  "Flash fired, auto mode, return light detected, red-eye reduction mode": {
+    "message":  "Сработала, авто, свет обнаружен, подавление красных глаз"
+  },
+  "EV_1/2": {
+    "message": "1/2"
+  },
+  "EV_1/3": {
+    "message": "1/3"
+  },
+  "EV_2/3": {
+    "message": "2/3"
+  },
+  "EV_1/4": {
+    "message": "1/4"
+  },
+  "EV_3/4": {
+    "message": "3/4"
+  },
+  "EV_1/5": {
+    "message": "1/5"
+  },
+  "EV_2/5": {
+    "message": "2/5"
+  },
+  "EV_3/5": {
+    "message": "3/5"
+  },
+  "EV_4/5": {
+    "message": "4/5"
+  },
+  "ExposureBias": {
+    "message": "$1 $UNIT$",
+    "placeholders": {
+      "UNIT": {
+        "content": "$2",
+        "description": "Pluralized and localized unit for exposure compensation steps."
+      }
+    }
+  },
+  "EV_one": {
+    "message": "EV"
+  },
+  "EV_few": {
+    "message": "EV"
+  },
+  "EV_many": {
+    "message": "EV"
+  },
+  "EV_other": {
+    "message": "EV"
+  },
+  "LocationRefN": {
+    "message": "с. ш."
+  },
+  "LocationRefS": {
+    "message": "ю. ш."
+  },
+  "LocationRefW": {
+    "message": "з. д."
+  },
+  "LocationRefE": {
+    "message": "в. д."
+  },
+  "LocationStringLocalized": {
+    "message": "$LATITUDE$ $LANREF$, $LONGITUDE$ $LONREF$",
+    "placeholders": {
+      "LATITUDE": {
+        "content": "$1"
+      },
+      "LANREF": {
+        "content": "$2"
+      },
+      "LONGITUDE": {
+        "content": "$3"
+      },
+      "LONREF": {
+        "content": "$4"
+      }
+    }
+  },
+  "GoogleMapsName": {
+    "message": "Карты Google"
+  },
+  "GoogleMapsURL": {
+    "message": "https://www.google.ru/maps/place/$LOCATION$/",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on Google Maps."
+      }
+    }
+  },
+  "YandexMapsName": {
+    "message": "Яндекс.Карты"
+  },
+  "YandexMapsURL": {
+    "message": "https://yandex.ru/maps/?mode=search&text=$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on Yandex Maps."
+      }
+    }
+  },
+  "OSMName": {
+    "message": "OSM"
+  },
+  "OSMURL": {
+    "message": "https://www.openstreetmap.org/?locale=ru&$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location for marker on OSM (decimal lat/lon)."
+      }
+    }
+  },
+  "GeoHackName": {
+    "message": "GeoHack"
+  },
+  "GeoHackURL": {
+    "message": "https://tools.wmflabs.org/geohack/geohack.php?language=ru&params=$LOCATION$",
+    "placeholders": {
+      "LOCATION": {
+        "content": "$1",
+        "description": "Location to search on GeoHack."
+      }
+    }
+  }
+
+}

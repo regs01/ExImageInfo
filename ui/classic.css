@@ -1,0 +1,131 @@
+#PageTitle::before {
+  content: '__MSG_PageTitle__';
+}
+
+#ImagePropertiesLabel::before {
+  content: '__MSG_ImagePropertiesHeaderLabel__';
+}
+
+#EXIFLabel::before {
+  content: '__MSG_EXIFHeaderLabel__';
+}
+
+#EXIFSourceLabel::before {
+  content: '__MSG_EXIFSourceHeaderLabel__';
+}
+
+* {
+  font-family: 'Segoe UI', 'Ubuntu', Tahoma, Geneva, Verdana, 'Helvetica Neue', sans-serif;
+  font-size: 10pt;
+  color: #444;
+}
+
+body {
+  padding: 10px;
+  background-color: #fcfcfc;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  table-layout: fixed;
+  overflow-x: hidden;
+  min-width: 330px;
+}
+
+table#exifdata {
+  margin-bottom: 2px;
+}
+
+table#imagedata colgroup col:nth-of-type(1) {
+  width: 115px;
+}
+
+table#exifdata colgroup col:nth-of-type(1),
+table#exifsource colgroup col:nth-of-type(1) {
+  width: 167px;
+}
+
+table thead tr th {
+  text-align: left;
+  font-size: 11pt;
+  padding: 1px 3px;
+  border-bottom: 1px solid #808080;
+}
+
+table tbody > tr:first-child td {
+  padding-top: 5px;
+}
+
+table tfoot > tr:first-child td {
+  padding-top: 7px;
+}
+
+table tbody tr td,
+table tfoot tr td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0px 8px;
+}
+
+table tbody tr td.nowrap,
+table tfoot tr td.nowrap {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.collapsible {
+  transition: transform 220ms ease-out 0ms;
+  transform-origin: top;
+  transform: scaleY(1);
+  overflow-y: initial;
+}
+
+div.collapsible.collapsed {
+  transform: scaleY(0);
+  overflow-y: hidden;
+  position: absolute;
+}
+
+p {
+  margin: 0px;
+  display: inline;
+}
+
+p.information {
+  font-size: 8pt;
+  color: #888;
+}
+
+a.mapurl {
+  padding: 0px 8px 0px 17px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  white-space: nowrap;
+  float: left;
+}
+
+a.mapurl.googlemaps {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/48/GoogleMaps_logo.svg');
+}
+
+a.mapurl.yandexmaps {
+  background-position: left 0px top 2px;
+  background-image: url('https://yandex.ru/maps/favicon.svg');
+
+}
+
+a.mapurl.osm {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg');
+}
+
+a.mapurl.geohack {
+  background-image: url('https://tools.wmflabs.org/geohack/siteicon.png');
+}
+
+table#exifsource {
+  border: 1px #808080 solid;
+}
