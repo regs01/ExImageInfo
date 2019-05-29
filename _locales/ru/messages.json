@@ -3,6 +3,7 @@
     "message": "ru",
     "description": "i18n currently does not provide ability to retrieve currently active locale."
   },
+
   "ExtensionsName": {
     "message": "ExImageInfo"
   },
@@ -18,11 +19,21 @@
   "ImagePropertiesHeaderLabel": {
     "message": "Свойства изображения"
   },
+  "OptionsLocationActiveLink": {
+    "message": "URL расположения в виде активной ссылки"
+  },
+  "OptionsCustomTags": {
+    "message": "Дополнительные метки:"
+  },
+  "OptionsCustomTagsDescription": {
+    "message": "(разделённые ,)"
+  },
+  "OptionsSave": {
+    "message": "Сохранить"
+  },
+
   "EXIFHeaderLabel": {
     "message": "EXIF"
-  },
-  "EXIFSourceHeaderLabel": {
-    "message": "Данные EXIF"
   },
   "LocationLabel": {
     "message": "Расположение:"
@@ -226,7 +237,13 @@
     "message": "Местоположение:"
   },
   "EXIFSourceLabel": {
-    "message": "Полный EXIF"
+    "message": "Все EXIF метки"
+  },
+  "IPTCSourceLabel": {
+    "message": "Все IPTC метки"
+  },
+  "XMPSourceLabel": {
+    "message": "XMP данные"
   },
   "NoEXIF": {
     "message": "Данные EXIF отсутствуют."

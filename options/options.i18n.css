@@ -1,0 +1,15 @@
+#location-as-link-label::after {
+  content:  '__MSG_OptionsLocationActiveLink__';
+}
+
+#custom-tags-label::before {
+  content:  '__MSG_OptionsCustomTags__';
+}
+
+#custom-tags--description-label::after {
+  content:  '__MSG_OptionsCustomTagsDescription__';
+}
+
+#save-options::before {
+  content:  '__MSG_OptionsSave__';
+}

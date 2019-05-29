@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title id="PageTitle"></title>
   <script type="text/javascript" src="../lib/commonfunctions.js"></script>
   <script type="text/javascript" src="../lib/localize.js"></script>
   <script type="text/javascript" src="../lib/exiffunctions.js"></script>
   <script type="text/javascript" src="classic.js"></script>
+  <link rel="stylesheet" type="text/css" href="classic.i18n.css">
   <link rel="stylesheet" type="text/css" href="classic.css">
 </head>
 <body>
@@ -33,16 +34,32 @@
   </tfoot>
   </table>
 
-  <div class="collapsible collapsed">
-  <table id="exifsource">
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <thead><tr><th colspan="2" id="EXIFSourceLabel"></th></tr></thead>
-    <tbody>
-    </tbody>
-  </table>
+  <div id="exifsource" class="collapsible collapsed hidden">
+  <a id="link-expand" href="#"></a>
+  <div>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <div id="iptcsource" class="collapsible collapsed hidden">
+  <a id="link-expand" href="#"></a>
+  <div>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
   </div>
 
 </body>

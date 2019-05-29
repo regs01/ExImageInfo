@@ -3,6 +3,7 @@
     "message": "en",
     "description": "i18n currently does not provide ability to retrieve currently active locale."
   },
+
   "ExtensionsName": {
     "message": "ExImageInfo"
   },
@@ -18,11 +19,21 @@
   "ImagePropertiesHeaderLabel": {
     "message": "Image Properties"
   },
+  "OptionsLocationActiveLink": {
+    "message": "Show location URL as active link"
+  },
+  "OptionsCustomTags": {
+    "message": "Show custom tags:"
+  },
+  "OptionsCustomTagsDescription": {
+    "message": "(separated by ,)"
+  },
+  "OptionsSave": {
+    "message": "Save"
+  },
+
   "EXIFHeaderLabel": {
     "message": "EXIF"
-  },
-  "EXIFSourceHeaderLabel": {
-    "message": "EXIF Source"
   },
   "LocationLabel": {
     "message": "Location:"
@@ -214,9 +225,15 @@
     "message": "Location:"
   },
   "EXIFSourceLabel": {
-    "message": "Full EXIF data"
+    "message": "All EXIF tags"
   },
-  "NoEXIF": {
+  "IPTCSourceLabel": {
+    "message": "All IPTC tags"
+  },
+  "XMPSourceLabel": {
+    "message": "XMP data"
+  },
+"NoEXIF": {
     "message": "EXIF data not available."
   },
   "ErrorEXIFData": {

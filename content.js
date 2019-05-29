@@ -28,14 +28,15 @@ function retrieveImageData() {
 
     let scaleRatio = window.devicePixelRatio;
     let imgData = new ImgData(element, scaleRatio);
-
     imgData.retrieveData()
     .then ((properties) => {
       EXIF.getData(element, function() {
         let exifTags = EXIF.getAllTags(this);
+        let iptcTags = EXIF.getAllIptcTags(this);
         browser.storage.local.set({
           'ipImageProperties': properties,
-          'ipImageExif': JSON.stringify(exifTags)
+          'ipImageEXIF': JSON.stringify(exifTags),
+          'ipImageIPTC': JSON.stringify(iptcTags)
         })
         .then(() => {
           browser.runtime.sendMessage('ImgDataFinished');

@@ -1,3 +1,4 @@
+/* global STORAGE_NAME_EXIFDATA */
 const CONTEXT_MENU_ID = 'ip-img-properties';
 
 browser.menus.create({
@@ -10,7 +11,7 @@ function OpenImagePropertiesWindow () {
 
   function loadEXIFData (data) {
 
-    let exifData = JSON.parse(data['ipImageExif']);
+    let exifData = JSON.parse(data[STORAGE_NAME_EXIFDATA]);
     let isEXIFAvailable;
     isEXIFAvailable = (Object.entries(exifData).length === 0 && exifData.constructor === Object) ? false : true;
 
@@ -25,7 +26,7 @@ function OpenImagePropertiesWindow () {
 
   }
 
-  let exifDataLoad = browser.storage.local.get('ipImageExif');
+  let exifDataLoad = browser.storage.local.get(STORAGE_NAME_EXIFDATA);
   exifDataLoad.then(loadEXIFData, onError);
 
 }

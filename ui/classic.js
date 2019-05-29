@@ -4,13 +4,22 @@
 /* global CONTENT_SPACE */
 /* global STORAGE_NAME_IMGDATA */
 /* global STORAGE_NAME_EXIFDATA */
+/* global STORAGE_NAME_IPTCDATA */
+/* global OPTION_ACTIVE_LINK */
+/* global OPTION_CUSTOM_TAGS */
 
 const _Msg = browser.i18n.getMessage;
+const Name =  _Msg('ExtensionsName');
 
 const CellContentType = {
   TEXT: 1,
   OBJECT: 2,
   LINE_BREAK: 3
+}
+
+var options = {
+  activeLink: false,
+  customTags: ''
 }
 
 window.onload = onLoad;
@@ -19,38 +28,41 @@ function onLoad() {
 
   window.addEventListener('click', onClick);
 
-  let imgDataLoad = browser.storage.local.get(STORAGE_NAME_IMGDATA);
-  imgDataLoad.then(onGetImageProperties, (error) => {onStorageError(error, STORAGE_NAME_IMGDATA)});
-  let exifDataLoad = browser.storage.local.get(STORAGE_NAME_EXIFDATA);
-  exifDataLoad.then(onGetImageExif, (error) => {onStorageError(error, STORAGE_NAME_EXIFDATA)});
+  loadOptions();
 
 }
 
-function onClick (event) {
+function loadOptions () {
 
-  if (event.target.href !== undefined) {
-
-    switch (event.target.id) {
-      case 'link-map': {
-        event.preventDefault();
-        browser.tabs.create( { active: true, url: event.target.href });
-        break;
-      }
-      case 'link-expand': {
-        event.preventDefault();
-        let div = document.getElementById('exifsource').closest('div.collapsible');
-        div.classList.toggle('collapsed');
-        break;
-      }
-    }
-
+  function setOptions(result) {
+    options.activeLink = result.ipActiveLink;
+    options.customTags = result.ipCustomTags;
+    loadData();
   }
+
+  var optionsData = browser.storage.sync.get([OPTION_ACTIVE_LINK, OPTION_CUSTOM_TAGS]);
+  optionsData.then(setOptions, onError);
+
+}
+
+function loadData () {
+
+  let imgData = browser.storage.local.get(STORAGE_NAME_IMGDATA);
+  imgData.then(onGetImageProperties, (error) => {onStorageError(error, STORAGE_NAME_IMGDATA)});
+  let exifData = browser.storage.local.get(STORAGE_NAME_EXIFDATA);
+  exifData.then(onGetImageExif, (error) => {onStorageError(error, STORAGE_NAME_EXIFDATA)});
+  let iptcData = browser.storage.local.get(STORAGE_NAME_IPTCDATA);
+  iptcData.then(onGetImageIptc, (error) => {onStorageError(error, STORAGE_NAME_IPTCDATA)});
 
 }
 
 function onStorageError(error, storageName) {
-  console.error(error);
+  console.error(`Error ${Name}: ${error}`);
   browser.storage.local.remove(storageName);
+}
+
+function onError(error) {
+  console.log(`Error ${Name}: ${error}`);
 }
 
 function onGetImageProperties(data) {
@@ -64,8 +76,18 @@ function onGetImageProperties(data) {
 
     //
     // Link name
-    if (imageData.linkName !== '')
-      tableAddRow(imgTag, {desc: _Msg('LocationLabel'), value: imageData.linkName, title: imageData.linkName, classes: ['nowrap']});
+    if (imageData.locationURL !== '') {
+      if (options.activeLink === true) {
+        let link;
+        link = document.createElement('a');
+        link.href = imageData.locationURL;
+        link.textContent = imageData.locationURL;
+        tableAddRow(imgTag, {desc: _Msg('LocationLabel'), value: link, title: imageData.locationURL,
+          contentType: CellContentType.OBJECT, classes: ['nowrap']});
+      }
+      else
+      tableAddRow(imgTag, {desc: _Msg('LocationLabel'), value: imageData.locationURL, title: imageData.locationURL, classes: ['nowrap']});
+    }
 
     //
     // File name
@@ -132,9 +154,14 @@ function onGetImageProperties(data) {
     //
     // File size
     let isFileSize = false;
+    let isFileProtocol = false;
 
     if (imageData.fileSizeDecoded > -1)
       isFileSize = true;
+
+    let url = new URL(imageData.locationURL);
+    if (url.protocol === 'file:')
+      isFileProtocol = true;
 
     let fileSize;
     if (isFileSize === true)
@@ -150,15 +177,16 @@ function onGetImageProperties(data) {
       tableEditCell(cell, {value: `${CONTENT_SPACE}${fsSIString}`});
     }
 
-    if (isFileSize === false) {
-      let fileSizeNA = '<p class="information">' + _Msg('FileSizeContentCaution') + '</p>';
+    if (isFileSize === false && isFileProtocol === false) {
+      let fileSizeNA = _Msg('FileSizeContentCaution');
       tableEditCell(cell, {contentType: CellContentType.LINE_BREAK});
-      tableEditCell(cell, {value: fileSizeNA});
+      tableEditCell(cell, {value: fileSizeNA, contentClasses: ['information']});
     }
 
   }
   catch (error) {
     let errorMsg;
+    onError(error);
     errorMsg = _Msg('ErrorImgData', [error.message]);
     tableAddRow(imgTag, {value: errorMsg, singleRow: true});
   }
@@ -353,20 +381,15 @@ function onGetImageExif(data) {
       exifData.UserComment = ExifFunctions.decodeExifUserComment(exifData.UserComment);
     }
 
-    makeExpandExifLink(exifTag);
 
-    exifTag = 'exifsource';
-    for (let item in exifData) {
-      if (exifData.hasOwnProperty(item)) {
-        // if (typeof exifData[item] !== 'object')
-          tableAddRow(exifTag, {desc: item, value: exifData[item]});
-      }
-    }
+    //
+    // List all tags
+    listAllTags('exifsource', data, STORAGE_NAME_EXIFDATA);
 
   }
   catch (error) {
     let errorMsg = (error.message === 'NoEXIF') ? 'NoEXIF' : 'ErrorEXIFData';
-    (errorMsg === 'ErrorEXIFData') && (console.error(error));
+    (errorMsg === 'ErrorEXIFData') && (onError(error));
     errorMsg = _Msg(errorMsg, [error.message]);
     tableAddRow(exifTag, {value: errorMsg, singleRow: true});
   }
@@ -376,15 +399,72 @@ function onGetImageExif(data) {
 
 }
 
-function makeExpandExifLink (placeTag) {
+function onGetImageIptc (data) {
 
-  let linkExifElement;
-  linkExifElement = document.createElement('a');
-  linkExifElement.id = 'link-expand';
-  linkExifElement.href = '#';
-  linkExifElement.textContent = _Msg('EXIFSourceLabel')
+  listAllTags('iptcsource', data, STORAGE_NAME_IPTCDATA);
 
-  tableAddRow(placeTag, {value: linkExifElement, section: 'tfoot', singleRow: true, contentType: CellContentType.OBJECT});
+}
+
+function listAllTags (elementId, dataArray, dataType) {
+
+  try {
+
+    let data = JSON.parse(dataArray[dataType]);
+    if (Object.entries(data).length === 0 && data.constructor === Object)
+      return;
+
+    document.getElementById(elementId).classList.remove('hidden');
+
+    for (let item in data) {
+
+      if (data.hasOwnProperty(item)) {
+
+        if (dataType === STORAGE_NAME_EXIFDATA && item === 'thumbnail')
+          continue;
+
+        if (options.customTags !== '') {
+          let customTags = options.customTags.split(',');
+          customTags = customTags.map(tag => tag.trim());
+          if (customTags.includes(item))
+            tableAddRow('exifdata', {desc: item, value: data[item]});
+        }
+
+        tableAddRow(elementId, {desc: item, value: data[item]});
+
+      }
+
+    }
+
+  }
+  catch (error) {
+    onError(error);
+    tableAddRow(elementId, {value: error.message, singleRow: true});
+  }
+  finally {
+    browser.storage.local.remove(dataType);
+  }
+
+}
+
+function onClick (event) {
+
+  if (event.target.href !== undefined) {
+
+    switch (event.target.id) {
+      case 'link-map': {
+        event.preventDefault();
+        browser.tabs.create( { active: true, url: event.target.href });
+        break;
+      }
+      case 'link-expand': {
+        event.preventDefault();
+        let div = event.target.closest('div.collapsible');
+        div.classList.toggle('collapsed');
+        break;
+      }
+    }
+
+  }
 
 }
 
@@ -419,16 +499,27 @@ function tableAddRow (tableId,
 }
 
 function tableEditCell (cellId,
-  {value = '', contentType = CellContentType.TEXT, replace = false} = {}) {
+  {value = '', contentType = CellContentType.TEXT, contentClasses = [], replace = false} = {})
+{
+
+  let element;
+
+  if (cellId instanceof HTMLElement)
+    element = cellId
+  else
+    element = document.getElementById(cellId);
+
+  if (!(element instanceof HTMLElement))
+    return;
 
   if (replace === true)
-    cellId.innerHTML = '';
+    element.innerHTML = '';
 
   switch (contentType) {
     case CellContentType.TEXT: {
-      let element = document.createElement('p');
-      element.textContent = value;
-      value = element;
+      let pNode = document.createElement('p');
+      pNode.textContent = value;
+      value = pNode;
       break;
     }
     case CellContentType.LINE_BREAK:
@@ -436,9 +527,12 @@ function tableEditCell (cellId,
       break;
   }
 
-  if (value instanceof HTMLElement)
-    cellId.appendChild(value)
-  else
-    cellId.textContent += value;
+  if (value instanceof HTMLElement) {
+    value.classList.add(...contentClasses);
+    element.appendChild(value)
+  }
+  else {
+    element.textContent += value;
+  }
 
 }

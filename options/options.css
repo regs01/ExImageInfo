@@ -1,0 +1,25 @@
+section {
+  font-size : 125%;
+  padding: 5px;
+  border-top: 1px solid #bbbbbb;
+}
+
+section > label,
+section > div {
+  display: block;
+  margin-top: 15px;
+}
+
+section > div.footer {
+  margin-top: 25px;
+}
+
+p.description {
+  font-size: 90%;
+  color: #444444;
+  display: inline;
+}
+
+#custom-tags {
+  width: 320px;
+}

@@ -1,0 +1,19 @@
+#PageTitle::before {
+  content: '__MSG_PageTitle__';
+}
+
+#ImagePropertiesLabel::before {
+  content: '__MSG_ImagePropertiesHeaderLabel__';
+}
+
+#EXIFLabel::before {
+  content: '__MSG_EXIFHeaderLabel__';
+}
+
+#exifsource a::before {
+  content: '__MSG_EXIFSourceLabel__'
+}
+
+#iptcsource a::before {
+  content: '__MSG_IPTCSourceLabel__'
+}
